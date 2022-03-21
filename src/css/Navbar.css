@@ -1,0 +1,29 @@
+.navbar {
+    min-height: 42px;
+    background-color: purple;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-list {
+    padding-left: 0px;
+    margin: auto 16px;
+}
+.navbar-item {
+    list-style: none;
+    margin: 0 8px;
+    display: inline-block;
+    padding-right: 10px;
+}
+.navbar-items {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+.navbar-items:hover {
+    text-decoration: underline;
+}
+.navbar-right {
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+}

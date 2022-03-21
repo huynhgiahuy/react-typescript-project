@@ -1,0 +1,170 @@
+body {
+    /*background: #0e101c;*/
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    background-color: antiquewhite;
+
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-weight: 100;
+    color: black;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(79, 98, 148);
+    margin-bottom: 2rem;
+  }
+  h2 {
+    text-align: center;
+  }
+  
+  p::before {
+    display: inline;
+  }
+  
+  input,
+  select,
+  button,
+  .btnSubmit,
+  .btnReset,
+  .muifield {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .label-no-mui {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+    font-weight: bold;
+    color: black;
+  }
+  
+  button[type="submit"],
+  /*.btnSubmit,*/
+  /*input[type="submit"],*/
+  /*button[type="button"],*/
+  .btnReset {
+    background: #ec5990;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"]:hover,
+  input[type="submit"]:hover
+  /*button[type='button']:hover*/ {
+    background: #bf1650;
+  }
+
+  #btnReset:hover {
+    background: #333;
+  }
+  
+  button[type="submit"]:active,
+  input[type="button"]:active,
+  input[type="submit"]:active,
+  button[type='button']:active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+  }
+  
+  input:disabled {
+    opacity: 0.4;
+  }
+  
+  input[type="button"]:hover {
+    transition: 0.3s all;
+  }
+  
+  button[type="submit"],
+  input[type="button"],
+  input[type="submit"],
+  button[type='button'] {
+    -webkit-appearance: none;
+  }
+  
+  .register {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .signin {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /*button[type="button"],*/
+  /*.btnSubmit,*/
+  #btnReset {
+    display: block;
+    appearance: none;
+    background: #333;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  /*button[type="button"]:hover,*/
+  .btnReset {
+    background: gray;
+  }
+  
+  hr {
+    margin-top: 30px;
+  }
+  
+  /*button*/
+  .btnSubmit,
+  .btnReset {
+    display: block;
+    appearance: none;
+    margin-top: 40px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  .muifield {
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .gender-role {
+    display: flex;
+    flex-direction: column;
+  }
+  .list-item {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }

@@ -1,0 +1,38 @@
+{
+    "infoname": "Nhập Thông Tin",
+    "totalage": "Tổng Tuổi",
+    "customername": "Trần Văn A",
+    "functiontestingname": "Truy Vấn Mảng",
+    "yupregistername": "Đăng Ký Tài Khoản (Yup)",
+    "formikregistername": "Đăng Ký Tài Khoản (Formik)",
+    "muitablename": "Bảng Data Grid",
+    "formelement": {
+        "inputname": "Họ Tên*",
+        "inputage": "Tuổi*",
+        "inputemail": "Email*",
+        "inputgender": "Giới Tính",
+        "inputgendermale": "Nam",
+        "inputgenderfemale": "Nữ",
+        "inputgenderother": "Khác",
+        "inputrole": "Công Việc",
+        "inputrolestudent": "Học Sinh",
+        "inputroleemployee": "Công Nhân",
+        "inputroleofficer": "Nhân Viên",
+        "inputrolefreelancer": "Tự Do",
+        "inputusername": "Tên Đăng Nhập*",
+        "inputpassword": "Mật Khẩu*",
+        "inputpasswordconfirm": "Xác Nhận Mật Khẩu*",
+        "termconfirm": "Tôi đã đọc và chấp nhận các điều khoản của trang web",
+        "submit": "Đăng Ký",
+        "reset": "Đặt lại"
+    },
+    "notfound": {
+        "notfoundname": "XIN LỖI PAGE KHÔNG TỒN TẠI",
+        "notfoundalert1": "Xin hãy chọn trang khác!",
+        "notfoundalert2": "Chọn trang Thông Tin"
+    },
+    "alert": {
+        "alertsubmit": "Đăng Ký Thành Công",
+        "alertreset": "Đặt Lại Thành Công"
+    }
+}

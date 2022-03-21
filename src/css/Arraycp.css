@@ -1,0 +1,27 @@
+hr {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.invoice-total {
+    padding-right: 10px;
+}
+.testing-function {
+    text-align: center;
+}
+.invoice-name-testing {
+    color: brown;
+    font-weight: bold;
+}
+.invoice-name-testing {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.arraycp-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.query-invoice {
+    margin-top: 10px;
+}

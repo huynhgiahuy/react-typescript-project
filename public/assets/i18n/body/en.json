@@ -1,0 +1,38 @@
+{
+    "infoname": "Information",
+    "totalage": "Total Age",
+    "customername": "Tran Van A",
+    "functiontestingname": "Array Function",
+    "yupregistername": "Yup Form",
+    "formikregistername": "Formik Form",
+    "muitablename": "Data Grid Table",
+    "formelement": {
+        "inputname": "Full name*",
+        "inputage": "Age*",
+        "inputemail": "Email*",
+        "inputgender": "Gender",
+        "inputgendermale": "Male",
+        "inputgenderfemale": "Female",
+        "inputgenderother": "Other",
+        "inputrole": "Role",
+        "inputrolestudent": "Student",
+        "inputroleemployee": "Employee",
+        "inputroleofficer": "Officer",
+        "inputrolefreelancer": "Freelancer",
+        "inputusername": "Username*",
+        "inputpassword": "Password*",
+        "inputpasswordconfirm": "Confirm Password*",
+        "termconfirm": "I have read and agree to the website conditions",
+        "submit": "Submit",
+        "reset": "Reset"
+    },
+    "notfound": {
+        "notfoundname": "SORRY PAGE NOT FOUND",
+        "notfoundalert1": "Please go back to another page",
+        "notfoundalert2": "Go to Info page"
+    },
+    "alert": {
+        "alertsubmit": "Submission Successfull",
+        "alertreset": "Reset Successfull"
+    }
+}
