@@ -203,6 +203,7 @@ export const Register: React.FC = () => {
               label={t("body:formelement.inputpassword")}
               variant='outlined'
               className='muifield'
+              type='password'
               error={!!errors.password}
               helperText={errors.password ? errors.password.message : ""}
             />
@@ -220,6 +221,7 @@ export const Register: React.FC = () => {
               label={t("body:formelement.inputpasswordconfirm")}
               variant='outlined'
               className='muifield'
+              type='password'
               error={!!errors.passwordconfirm}
               helperText={errors.passwordconfirm ? errors.passwordconfirm.message : ""}
             />

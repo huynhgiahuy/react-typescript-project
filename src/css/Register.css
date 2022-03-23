@@ -28,6 +28,10 @@ body {
     display: inline;
   }
   
+  p {
+    color: red
+  }
+  
   input,
   select,
   button,
