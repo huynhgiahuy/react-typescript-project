@@ -54,7 +54,7 @@ export const Form: React.FC<IProps> = ({ infor, setInfor }: IProps) => {
       .max(70, `${t("body:error.fullnamerequiredmax")}`),
     age: yup.number()
       .required(`${t("body:error.agerequired")}`)
-      .min(0, `${t("body:error.agerequiredmin")}`)
+      .min(1, `${t("body:error.agerequiredmin")}`)
       .max(100, `${t("body:error.agerequiredmax")}`),
     email: yup.string()
       .required(`${t("body:error.emailrequired")}`)
