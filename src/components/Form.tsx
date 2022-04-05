@@ -51,6 +51,7 @@ export const Form: React.FC<IProps> = ({ infor, setInfor }: IProps) => {
   const validationSchema = yup.object().shape({
     name: yup.string()
       .required(`${t("body:error.fullbamerequired")}`)
+      .min(3, `${t("body:error.fullnamerequiredmin")}`)
       .max(70, `${t("body:error.fullnamerequiredmax")}`),
     age: yup.number()
       .required(`${t("body:error.agerequired")}`)

@@ -36,7 +36,8 @@
     },
     "error": {
         "fullbamerequired": "Vui lòng nhập Họ Tên!",
-        "fullnamerequiredmax": "Họ Tên phải tối đa là 70 ký tự!",
+        "fullnamerequiredmin": "Họ Tên phải tối thiểu 3 ký tự!",
+        "fullnamerequiredmax": "Họ Tên phải tối đa 70 ký tự!",
         "fullnamerequiredmatch": "Họ Tên không bao gồm các chữ số!",
         "agerequired": "Vui lòng nhập Tuổi!",
         "agerequiredmin": "Tuổi phải tối thiểu là 1!",

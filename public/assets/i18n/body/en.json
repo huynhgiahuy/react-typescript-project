@@ -36,6 +36,7 @@
     },
     "error": {
         "fullbamerequired": "Full name is required!",
+        "fullnamerequiredmin": "Full name must be at least 3 characters!",
         "fullnamerequiredmax": "Full name must be at most 70 characters!",
         "fullnamerequiredmatch": "Full name must not contain number",
         "agerequired": "Age is required!",
