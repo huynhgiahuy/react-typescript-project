@@ -14,7 +14,10 @@ export const Register2: React.FC = () => {
     const { t } = useTranslation(["body"])
 
     const validationSchema = yup.object().shape({
-        fullname: yup.string().required(`${t("body:error.fullbamerequired")}`),
+        fullname: yup.string()
+            .required(`${t("body:error.fullbamerequired")}`)
+            .min(3, `${t("body:error.fullnamerequiredmin")}`)
+            .max(70, `${t("body:error.fullnamerequiredmax")}`),
         username: yup.string()
             .required(`${t("body:error.usernamerequired")}`)
             .min(6, `${t("body:error.usernamerequiredmin")}`)

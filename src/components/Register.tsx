@@ -44,6 +44,7 @@ export const Register: React.FC = () => {
   const validationSchema = Yup.object().shape({
     fullname: Yup.string()
       .required(`${t("body:error.fullbamerequired")}`)
+      .min(3, `${t("body:error.fullnamerequiredmin")}`)
       .max(70, `${t("body:error.fullnamerequiredmax")}`),
     username: Yup.string()
       .required(`${t("body:error.usernamerequired")}`)
