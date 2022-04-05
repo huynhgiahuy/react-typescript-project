@@ -17,6 +17,7 @@
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.12",
+    "axios": "^0.26.1",
     "faker": "^6.6.6",
     "formik": "^2.2.9",
     "i": "^0.3.7",
@@ -58,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/validator": "^13.7.2"
   }
 }

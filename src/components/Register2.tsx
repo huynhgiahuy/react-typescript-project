@@ -14,14 +14,14 @@ export const Register2: React.FC = () => {
     const { t } = useTranslation(["body"])
 
     const validationSchema = yup.object().shape({
-        fullname: yup.string().required('Full name is required!'),
+        fullname: yup.string().required(`${t("body:error.fullbamerequired")}`),
         username: yup.string()
-            .required('Username is required!')
-            .min(6)
-            .max(20),
+            .required(`${t("body:error.usernamerequired")}`)
+            .min(6, `${t("body:error.usernamerequiredmin")}`)
+            .max(20, `${t("body:error.usernamerequiredmax")}`),
         email: yup.string()
-            .required('Email is required!')
-            .email(),
+            .required(`${t("body:error.emailrequired")}`)
+            .email(`${t("body:error.emailrequiredvalid")}`),
     })
 
     const formik = useFormik({

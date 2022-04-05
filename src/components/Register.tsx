@@ -11,7 +11,8 @@ import {
   MenuItem,
   InputLabel
 } from '@material-ui/core'
-import { Alert, Snackbar } from '@mui/material'
+import { Alert, Snackbar, InputAdornment, IconButton } from '@mui/material'
+import { Visibility, VisibilityOff } from '@mui/icons-material'
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useTranslation } from 'react-i18next'
@@ -25,10 +26,13 @@ interface IInputs {
   passwordconfirm: string,
   gender?: string,
   role?: string,
-  checkbox: boolean
+  checkbox: boolean,
+  showpassword: boolean
 }
 
 export const Register: React.FC = () => {
+  const [showPassword, setShowPassword] = useState(false)
+
   const [alertSubmit, setAlertSubmit] = useState(false)
 
   const [alertReset, setAlertReset] = useState(false)
@@ -38,31 +42,38 @@ export const Register: React.FC = () => {
   const { t } = useTranslation(["body"])
 
   const validationSchema = Yup.object().shape({
-    fullname: Yup.string().required('Fullname is required!'),
+    fullname: Yup.string()
+      .required(`${t("body:error.fullbamerequired")}`)
+      .max(70, `${t("body:error.fullnamerequiredmax")}`),
     username: Yup.string()
-      .required('Username is required!')
-      .min(6, 'Username must be at least 6 characters')
-      .max(20, 'Username must be at most 20 characters'),
+      .required(`${t("body:error.usernamerequired")}`)
+      .min(8, `${t("body:error.usernamerequiredmin")}`)
+      .max(20, `${t("body:error.usernamerequiredmax")}`),
     email: Yup.string()
-      .required('Email is required!')
-      .email('Email must be a valid email'),
+      .required(`${t("body:error.emailrequired")}`)
+      .email(`${t("body:error.emailrequiredvalid")}`),
     password: Yup.string()
-      .required('Password is required!')
-      .min(6, 'Password must be at least 6 characters')
-      .max(40, 'Password must be at most 40 characters'),
+      .required(`${t("body:error.passwordrequired")}`)
+      .min(8, `${t("body:error.passwordrequiredmin")}`)
+      .max(15, `${t("body:error.passwordrequiredmax")}`)
+      .matches(
+        /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+        `${t("body:error.passwordrequiredmatch")}`
+      ),
     passwordconfirm: Yup.string()
-      .required('Confirm password is required!')
-      .oneOf([Yup.ref('password'), null], 'Confirm password not match'),
+      .required(`${t("body:error.passwordconfirmrequired")}`)
+      .oneOf([Yup.ref('password'), null], `${t("body:error.passwordconfirmrequiredmatch")}`),
     checkbox: Yup.bool()
-      .required("You must accept the terms and conditions!")
-      .oneOf([true], "You must accept the terms and conditions!"),
+      .required(`${t("body:error.checkboxconfirm")}`)
+      .oneOf([true], `${t("body:error.checkboxconfirm")}`),
   })
 
   const { handleSubmit, reset, control, formState: { errors } } = useForm<IInputs>({
     resolver: yupResolver(validationSchema),
     defaultValues: {
       role: "",
-      checkbox: false
+      checkbox: false,
+      showpassword: false
     }
   })
 
@@ -71,7 +82,7 @@ export const Register: React.FC = () => {
     setAlertSubmit(true)
     reset()
     inputFocus.current!.focus()
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }
 
   const handleReset = () => {
@@ -87,6 +98,9 @@ export const Register: React.FC = () => {
     setAlertSubmit(false)
     setAlertReset(false)
   }
+
+  const handleClickShowPassword = () => setShowPassword(!showPassword)
+  const handleMouseDownPassword = () => setShowPassword(!showPassword)
 
   return (
     <div className='register'>
@@ -110,7 +124,7 @@ export const Register: React.FC = () => {
           )}
         />
         <div className='gender-role'>
-        <InputLabel className='label-no-mui'>{t("body:formelement.inputgender")}</InputLabel>
+          <InputLabel className='label-no-mui'>{t("body:formelement.inputgender")}</InputLabel>
           <Controller
             name='gender'
             defaultValue=''
@@ -203,9 +217,22 @@ export const Register: React.FC = () => {
               label={t("body:formelement.inputpassword")}
               variant='outlined'
               className='muifield'
-              type='password'
+              type={showPassword ? "text" : "password"}
               error={!!errors.password}
               helperText={errors.password ? errors.password.message : ""}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                )
+              }}
             />
           )}
         />
@@ -221,9 +248,22 @@ export const Register: React.FC = () => {
               label={t("body:formelement.inputpasswordconfirm")}
               variant='outlined'
               className='muifield'
-              type='password'
+              type={showPassword ? "text" : "password"}
               error={!!errors.passwordconfirm}
               helperText={errors.passwordconfirm ? errors.passwordconfirm.message : ""}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                )
+              }}
             />
           )}
         />

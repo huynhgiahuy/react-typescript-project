@@ -1,6 +1,5 @@
 {
     "infoname": "Nhập Thông Tin",
-    "totalage": "Tổng Tuổi",
     "customername": "Trần Văn A",
     "functiontestingname": "Truy Vấn Mảng",
     "yupregistername": "Đăng Ký Tài Khoản (Yup)",
@@ -15,7 +14,7 @@
         "inputgenderfemale": "Nữ",
         "inputgenderother": "Khác",
         "inputrole": "Công Việc",
-        "inputrolestudent": "Học Sinh",
+        "inputrolestudent": "Sinh Viên",
         "inputroleemployee": "Công Nhân",
         "inputroleofficer": "Nhân Viên",
         "inputrolefreelancer": "Tự Do",
@@ -29,10 +28,30 @@
     "notfound": {
         "notfoundname": "XIN LỖI PAGE KHÔNG TỒN TẠI",
         "notfoundalert1": "Xin hãy chọn trang khác!",
-        "notfoundalert2": "Chọn trang Thông Tin"
+        "notfoundalert2": "Quay về trang Thông Tin"
     },
     "alert": {
         "alertsubmit": "Đăng Ký Thành Công",
         "alertreset": "Đặt Lại Thành Công"
+    },
+    "error": {
+        "fullbamerequired": "Vui lòng nhập Họ Tên!",
+        "fullnamerequiredmax": "Họ Tên phải tối đa là 70 ký tự!",
+        "fullnamerequiredmatch": "Họ Tên không bao gồm các chữ số!",
+        "agerequired": "Vui lòng nhập Tuổi!",
+        "agerequiredmin": "Tuổi phải tối thiểu là 1!",
+        "agerequiredmax": "Tuổi phải tối đa là 100!",
+        "usernamerequired": "Vui lòng nhập Tên Đăng Nhập!",
+        "usernamerequiredmin": "Tên Đăng Nhập phải tối thiểu 8 ký tự!",
+        "usernamerequiredmax": "Tên Đăng Nhập phải tối đa 20 ký tự!",
+        "emailrequired": "Vui lòng nhập Email!",
+        "emailrequiredvalid": "Vui lòng nhập Email hợp lệ!",
+        "passwordrequired": "Vui lòng nhập Mật Khẩu!",
+        "passwordrequiredmin": "Mật Khẩu phải tối thiểu 8 ký tự!",
+        "passwordrequiredmax": "Mật Khẩu phải tối đa 15 ký tự!",
+        "passwordrequiredmatch": "Mật Khẩu phải tối thiểu 8 ký tự, một ký tự in hoa, một chữ số và một ký tự đặc biệt!",
+        "passwordconfirmrequired": "Vui lòng Xác Nhận Mật Khẩu!",
+        "passwordconfirmrequiredmatch": "Mật Khẩu không khớp!",
+        "checkboxconfirm": "Vui lòng chấp nhận các điểu khoản và dịch vụ!"
     }
 }

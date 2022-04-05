@@ -1,7 +1,6 @@
 import { IInvoiceListProps as IProps } from '../App'
 import { useTranslation } from 'react-i18next'
 import { arrayCpStyles } from '../makestyles/Arraycpstyles'
-//import '../css/Arraycp.css'
 
 export const Arraycp: React.FC<IProps> = (props: IProps) => {
     const classes = arrayCpStyles()

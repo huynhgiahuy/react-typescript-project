@@ -1,6 +1,5 @@
 {
     "infoname": "Information",
-    "totalage": "Total Age",
     "customername": "Tran Van A",
     "functiontestingname": "Array Function",
     "yupregistername": "Yup Form",
@@ -28,11 +27,31 @@
     },
     "notfound": {
         "notfoundname": "SORRY PAGE NOT FOUND",
-        "notfoundalert1": "Please go back to another page",
-        "notfoundalert2": "Go to Info page"
+        "notfoundalert1": "Please go back to another page!",
+        "notfoundalert2": "Go back Info page"
     },
     "alert": {
         "alertsubmit": "Submission Successfull",
         "alertreset": "Reset Successfull"
+    },
+    "error": {
+        "fullbamerequired": "Full name is required!",
+        "fullnamerequiredmax": "Full name must be at most 70 characters!",
+        "fullnamerequiredmatch": "Full name must not contain number",
+        "agerequired": "Age is required!",
+        "agerequiredmin": "Age must be at least 1!",
+        "agerequiredmax": "Age must be at most 100!",
+        "usernamerequired": "Username is required!",
+        "usernamerequiredmin": "Username must be at least 8 characters!",
+        "usernamerequiredmax": "Username must be at most 20 characters!",
+        "emailrequired": "Email is required!",
+        "emailrequiredvalid": "Email must be a valid email!",
+        "passwordrequired": "Password is required!",
+        "passwordrequiredmin": "Password must be at least 8 characters!",
+        "passwordrequiredmax": "Password must be at most 15 characters!",
+        "passwordrequiredmatch": "Password muse be at least 8 characters, one uppercase, one number and one special case character!",
+        "passwordconfirmrequired": "Confirm password is required!",
+        "passwordconfirmrequiredmatch": "Confirm password not match!",
+        "checkboxconfirm": "You must accept the terms and conditions!"
     }
 }

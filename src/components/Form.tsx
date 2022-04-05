@@ -1,7 +1,9 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { IState as Props } from '../App'
 import { Alert, Snackbar } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import * as yup from 'yup'
+import { useFormik } from 'formik'
 import '../css/Form.css'
 
 interface IProps {
@@ -9,8 +11,8 @@ interface IProps {
   setInfor: React.Dispatch<React.SetStateAction<Props['infor']>>
 }
 
-export const Form: React.FC<IProps> = ({infor, setInfor}: IProps) => {
-  const [input, setInput] = useState({ name: "", age: "", email: "" })
+export const Form: React.FC<IProps> = ({ infor, setInfor }: IProps) => {
+  //const [input, setInput] = useState({ name: "", age: "", email: "" })
 
   const [open, setOpen] = useState(false)
 
@@ -18,11 +20,11 @@ export const Form: React.FC<IProps> = ({infor, setInfor}: IProps) => {
 
   const { t } = useTranslation(["body"])
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  /*const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput({ ...input, [e.target.name]: e.target.value })
-  }
+  }*/
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  /*const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setInfor([...infor, {
       name: input.name,
@@ -32,7 +34,7 @@ export const Form: React.FC<IProps> = ({infor, setInfor}: IProps) => {
     setInput({ name: "", age: "", email: "" })
     setOpen(true)
     inputFocus.current!.focus()
-  }
+  }*/
 
   const handleClose = (e?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
@@ -41,74 +43,71 @@ export const Form: React.FC<IProps> = ({infor, setInfor}: IProps) => {
     setOpen(false);
   }
 
-  const renderList = () => {
-    return (
-      infor.map(peopleInfo => {
-        return (
-          <div className='list-item' key={peopleInfo.name}>
-            {peopleInfo.name} - {peopleInfo.age} - {peopleInfo.email}
-          </div>
-        )
-      })
-    )
-  }
-
-  //const total = infor.reduce((result, ppl) => {
-  //console.log('Tính toán lại')
-  //return result + ppl.age
-  //}, 0)
-
-  // Test Hook useMemo
-  const total = useMemo(() => {
-    const result = infor.reduce((result, ppl) => {
-      console.log('Tính toán lại')
-      return result + ppl.age
-    }, 0)
-    return result
-  }, [infor])
-
-  // Test Hook useRef
-  //useEffect(() => {
-    //renders.current = renders.current+1 
-  //})
-
   // Test Hook useRef
   useEffect(() => {
     inputFocus.current!.focus()
   }, [])
 
+  const validationSchema = yup.object().shape({
+    name: yup.string()
+      .required(`${t("body:error.fullbamerequired")}`)
+      .max(70, `${t("body:error.fullnamerequiredmax")}`),
+    age: yup.number()
+      .required(`${t("body:error.agerequired")}`)
+      .min(0, `${t("body:error.agerequiredmin")}`)
+      .max(100, `${t("body:error.agerequiredmax")}`),
+    email: yup.string()
+      .required(`${t("body:error.emailrequired")}`)
+      .email(`${t("body:error.emailrequiredvalid")}`)
+  })
+
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      age: '',
+      email: ''
+    },
+    validationSchema: validationSchema,
+    onSubmit: values => {
+      console.log(values)
+      setOpen(true)
+      inputFocus.current!.focus()
+      formik.resetForm()
+    }
+  })
+
   return (
     <div className='form-container'>
       <h1>{t("infoname")}</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={formik.handleSubmit}>
         <input
           type='text'
           name='name'
           id='name'
           ref={inputFocus}
           placeholder={t("body:formelement.inputname")}
-          onChange={handleChange}
-          value={input.name}
-          required
+          value={formik.values.name}
+          onChange={formik.handleChange}
         />
+        {formik.touched.name && Boolean(formik.errors.name) && <p>{formik.errors.name}</p>}
         <input
           type='number'
           name='age'
           id='age'
           placeholder={t("body:formelement.inputage")}
-          onChange={handleChange}
-          value={input.age}
-          required
+          value={formik.values.age}
+          onChange={formik.handleChange}
         />
+        {formik.touched.age && Boolean(formik.errors.age) && <p>{formik.errors.age}</p>}
         <input
-          type='email'
+          type='text'
           name='email'
           id='email'
           placeholder={t("body:formelement.inputemail")}
-          onChange={handleChange}
-          value={input.email}
-          required
+          value={formik.values.email}
+          onChange={formik.handleChange}
         />
+        {formik.touched.email && Boolean(formik.errors.email) && <p>{formik.errors.email}</p>}
 
         <button
           type='submit'
@@ -138,10 +137,6 @@ export const Form: React.FC<IProps> = ({infor, setInfor}: IProps) => {
           </Alert>
         </Snackbar>
       </form>
-
-      <h1></h1>
-      <h2>{t("totalage")} = {total} </h2>
-      {renderList()}
 
     </div>
   )

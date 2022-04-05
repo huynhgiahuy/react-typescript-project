@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import i18next from 'i18next'
 import { useEffect } from 'react'
@@ -22,19 +22,44 @@ export const Navbar: React.FC = () => {
         <div className="navbar">
             <ul className="navbar-list">
                 <li className="navbar-item">
-                    <Link to='/' className='navbar-items'>{t("info")}</Link>
+                    <NavLink
+                        to='/'
+                        className='navbar-items'
+                    >
+                        {t("info")}
+                    </NavLink>
                 </li>
                 <li className="navbar-item">
-                    <Link to='/arraycp' className='navbar-items'>{t("arraytesting")}</Link>
+                    <NavLink
+                        to='/arraycp'
+                        className='navbar-items'
+                    >
+                        {t("arraytesting")}
+                    </NavLink>
                 </li>
                 <li className="navbar-item">
-                    <Link to='/yupregister' className='navbar-items'>{t("yupregister")}</Link>
+                    <NavLink
+                        to='/yupregister'
+                        className='navbar-items'
+                    >
+                        {t("yupregister")}
+                    </NavLink>
                 </li>
                 <li className="navbar-item">
-                    <Link to='/formikregister' className='navbar-items'>{t("formikregister")}</Link>
+                    <NavLink
+                        to='/formikregister'
+                        className='navbar-items'
+                    >
+                        {t("formikregister")}
+                    </NavLink>
                 </li>
                 <li className='navbar-item'>
-                    <Link to='/muitable' className='navbar-items'>{t("muitable")}</Link>
+                    <NavLink
+                        to='/muitable'
+                        className='navbar-items'
+                    >
+                        {t("muitable")}
+                    </NavLink>
                 </li>
             </ul>
             <ul className='navbar-item'>

@@ -11,8 +11,8 @@ interface Column {
 }
 
 const columns: Column[] = [
-    { field: 'id', headerName: 'ID', headerClassName: 'header-name', },
-    { field: 'title', headerName: 'Title', headerClassName: 'header-name', width: 300, },
+    { field: 'id', headerName: 'ID', headerClassName: 'header-name' },
+    { field: 'title', headerName: 'Title', headerClassName: 'header-name', width: 300 },
     { field: 'body', headerName: 'Content', headerClassName: 'header-name', width: 400 }
 ]
 
@@ -29,6 +29,7 @@ export const Muitable: React.FC = () => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then((data) => data.json())
             .then((data) => setTableData(data))
+            .catch(() => alert('Có lỗi!'))
     }, [])
 
     return (
